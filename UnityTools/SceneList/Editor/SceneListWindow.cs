@@ -104,7 +104,15 @@ namespace UnityTools
                 {
                     EditorGUILayout.BeginHorizontal(GUI.skin.button);
 
-                    GUILayout.Label(sceneIcon, GUILayout.Width(18), GUILayout.Height(18));
+                    if (GUILayout.Button(sceneIcon, GUI.skin.label, GUILayout.Width(18), GUILayout.Height(18)))
+                    {
+                        Object sceneAsset = AssetDatabase.LoadAssetAtPath<Object>(scenePaths[i]);
+
+                        if (sceneAsset != null)
+                        {
+                            EditorGUIUtility.PingObject(sceneAsset);
+                        }
+                    }
                     if (GUILayout.Button(sceneName, GUI.skin.label))
                     {
                         if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
