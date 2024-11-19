@@ -1,10 +1,10 @@
 {
-    "name": "PackageBucket",
+    "name": "AdvancedAttributes",
     "rootNamespace": "",
-    "references": [
-        "GUID:f14100e0dd3b54d469785fc05b51c026"
+    "references": [],
+    "includePlatforms": [
+        "Editor"
     ],
-    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

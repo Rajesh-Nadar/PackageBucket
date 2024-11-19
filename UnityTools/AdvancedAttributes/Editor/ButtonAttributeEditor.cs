@@ -4,7 +4,6 @@ using UnityEngine;
 using System.Text;
 using System.Collections.Generic;
 using System.Collections;
-
 using UnityEditor;
 using System.Reflection;
 
@@ -70,7 +69,7 @@ namespace UnityTools.AdvancedAttributes
 
             if (editorButtonStates == null)
             {
-                CreateEditorButtonStates(methods.Select(member => (MethodInfo)member).ToArray());
+                CreateEditorButtonStates(methods.Select(member => (MethodInfo) member).ToArray());
             }
 
             foreach (var memberInfo in methods)
@@ -202,54 +201,54 @@ namespace UnityTools.AdvancedAttributes
             //because you can't cast an "int" object to float 
             //See for http://stackoverflow.com/questions/17516882/double-casting-required-to-convert-from-int-as-object-to-float more info
 
-            return EditorGUILayout.FloatField((float)val);
+            return EditorGUILayout.FloatField((float) val);
         }
 
         static object DrawIntParameter(ParameterInfo parameterInfo, object val)
         {
-            return EditorGUILayout.IntField((int)val);
+            return EditorGUILayout.IntField((int) val);
         }
 
         static object DrawBoolParameter(ParameterInfo parameterInfo, object val)
         {
-            return EditorGUILayout.Toggle((bool)val);
+            return EditorGUILayout.Toggle((bool) val);
         }
 
         static object DrawStringParameter(ParameterInfo parameterInfo, object val)
         {
-            return EditorGUILayout.TextField((string)val);
+            return EditorGUILayout.TextField((string) val);
         }
 
         static object DrawColorParameter(ParameterInfo parameterInfo, object val)
         {
-            return EditorGUILayout.ColorField((Color)val);
+            return EditorGUILayout.ColorField((Color) val);
         }
 
         static object DrawUnityEngineObjectParameter(ParameterInfo parameterInfo, object val)
         {
-            return EditorGUILayout.ObjectField((UnityEngine.Object)val, parameterInfo.ParameterType, true);
+            return EditorGUILayout.ObjectField((UnityEngine.Object) val, parameterInfo.ParameterType, true);
         }
 
         static object DrawVector2Parameter(ParameterInfo parameterInfo, object val)
         {
-            return EditorGUILayout.Vector2Field("", (Vector2)val);
+            return EditorGUILayout.Vector2Field("", (Vector2) val);
         }
 
         static object DrawVector3Parameter(ParameterInfo parameterInfo, object val)
         {
-            return EditorGUILayout.Vector3Field("", (Vector3)val);
+            return EditorGUILayout.Vector3Field("", (Vector3) val);
         }
 
         static object DrawQuaternionParameter(ParameterInfo parameterInfo, object val)
         {
-            return Quaternion.Euler(EditorGUILayout.Vector3Field("", ((Quaternion)val).eulerAngles));
+            return Quaternion.Euler(EditorGUILayout.Vector3Field("", ((Quaternion) val).eulerAngles));
         }
 
         string MethodDisplayName(MethodInfo method, string name = null)
         {
             StringBuilder sb = new();
 
-            if (string.IsNullOrEmpty(name))
+            if(string.IsNullOrEmpty(name))
                 sb.Append(method.Name);
             else
                 sb.Append(name);
