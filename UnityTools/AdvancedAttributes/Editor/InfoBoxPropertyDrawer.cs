@@ -24,7 +24,7 @@ namespace UnityTools.AdvancedAttributes
             var propertyFieldRect = new Rect(position.x, position.y + helpBoxHeight + 3, position.width, EditorGUIUtility.singleLineHeight);
 
             // Draw the help box.
-            EditorGUI.HelpBox(helpBoxRect, info.message, info.type);
+            EditorGUI.HelpBox(helpBoxRect, info.message, (UnityEditor.MessageType) (int) info.type);
 
             // Draw the property as usual
             EditorGUI.PropertyField(propertyFieldRect, property, label);
@@ -35,7 +35,7 @@ namespace UnityTools.AdvancedAttributes
             var lines = info.message.Split('\n');
             var height = (14 * lines.Length);
 
-            if(height < 35)
+            if (height < 35)
                 height = 35;
 
             return height;
