@@ -129,7 +129,7 @@ namespace UnityTools
                         Scene scene = EditorSceneManager.GetSceneByPath(scenePaths[i]);
                         Scene activeScene = default;
 
-                        int sceneCount = EditorSceneManager.loadedSceneCount;
+                        int sceneCount = SceneManager.loadedSceneCount;
 
                         for (int k = 0; k < sceneCount; k++)
                         {
